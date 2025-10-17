@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — James W Wachira</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">James W Wachira</div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-links" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="assets/JamesWachira_CV.pdf" download class="btn-cv">Download CV</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="projects-section reveal">
+      <h1>Selected Projects</h1>
+      <p class="muted">Click a card to open details and gallery images.</p>
+
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <article class="project-card" data-index="0" tabindex="0" role="button" aria-pressed="false">
+          <h3>Forex Market Dashboard</h3>
+          <p>Real-time price action dashboard and alerts.</p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-index="1" tabindex="0" role="button" aria-pressed="false">
+          <h3>Portfolio Website Template</h3>
+          <p>Modular responsive portfolio template.</p>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-index="2" tabindex="0" role="button" aria-pressed="false">
+          <h3>Binary Signal Bot UI</h3>
+          <p>Interface for managing automated signals.</p>
+        </article>
+
+        <!-- More projects -->
+        <article class="project-card" data-index="3" tabindex="0" role="button" aria-pressed="false">
+          <h3>Trade Journal (MVP)</h3>
+          <p>Simple trade logging application.</p>
+        </article>
+        <article class="project-card" data-index="4" tabindex="0" role="button" aria-pressed="false">
+          <h3>Data Tools</h3>
+          <p>Scripts and tools for data cleaning and export.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal / Lightbox -->
+  <div id="projectModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <div id="modalGallery" class="modal-gallery"></div>
+      <div class="modal-actions">
+        <a id="modalLink" class="btn btn-primary" href="#" target="_blank" rel="noopener">Visit project</a>
+        <a class="btn btn-ghost" href="assets/JamesWachira_CV.pdf" download>Download CV</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© 2025 James W Wachira</div>
+      <div class="socials"><a href="https://github.com/jameswachira394" target="_blank">GitHub</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
