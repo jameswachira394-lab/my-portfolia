@@ -43,7 +43,7 @@ body::before{
 .nav-left{display:flex;align-items:center;gap:14px}
 .logo{color:var(--accent);font-weight:700;letter-spacing:0.4px}
 .nav-links{display:flex;gap:14px;align-items:center}
-.profile-holder{display:flex;align-items:center}
+.profile-holder{display:flex;align-items:center;/* center in navbar on wide screens */position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1100;pointer-events:auto}
 .profile-img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,255,209,0.12);box-shadow:0 6px 22px rgba(0,255,209,0.06);background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
 .profile-img:hover{transform:translateY(-2px);transition:transform .18s,box-shadow .18s}
 .nav-links a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;transition:all .18s}
@@ -120,6 +120,8 @@ section{padding:48px 0}
   section{padding:28px 0}
   /* make profile smaller on small screens */
   .profile-img{width:38px;height:38px}
+  /* revert profile-holder to normal flow on smaller screens */
+  .profile-holder{position:static;transform:none;left:auto;top:auto;margin-left:0}
 }
 @media (max-width:520px){
   h1{font-size:1.5rem}
