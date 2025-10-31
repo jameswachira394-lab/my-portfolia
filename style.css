@@ -1,10 +1,11 @@
 /* Core */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 :root{
-  --bg:#000;
+  /* Stylish deep-navy base with teal accent */
+  --bg: linear-gradient(180deg,#031024 0%, #051827 60%, #071018 100%);
   --panel:#071018;
-  --accent:#00ffd1;
-  --muted:#9aa7b0;
+  --accent:#6ef0c8; /* softer teal */
+  --muted:#98aeb3;
   --glass: rgba(255,255,255,0.03);
   --max-width:1100px;
 }
@@ -13,7 +14,10 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
-  background:var(--bg);
+  /* layered background: subtle radial light + main gradient */
+  background:
+    radial-gradient(1200px 600px at 10% 10%,rgba(110,240,200,0.035), transparent 12%),
+    var(--bg);
   color:#e5f6f5;
   -webkit-font-smoothing:antialiased;
   line-height:1.5;
@@ -26,10 +30,11 @@ body{
 body::before{
   content:"";
   position:fixed;inset:0;
+  /* subtle grid overlay tuned to new accent */
   background-image:
-    linear-gradient(rgba(0,255,209,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,209,0.04) 1px, transparent 1px);
-  background-size:40px 40px,40px 40px;
+    linear-gradient(rgba(110,240,200,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110,240,200,0.03) 1px, transparent 1px);
+  background-size:48px 48px,48px 48px;
   mix-blend-mode:overlay;pointer-events:none;z-index:0;
 }
 
@@ -119,4 +124,28 @@ section{padding:48px 0}
 @media (max-width:520px){
   h1{font-size:1.5rem}
   .project-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Portfolio hero */
+.profile-hero{padding:36px 0}
+.hero-grid{display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:center}
+.hero-photo{width:160px;flex:0 0 160px}
+.hero-img{width:160px;height:160px;border-radius:14px;object-fit:cover;border:2px solid rgba(110,240,200,0.12);box-shadow:0 12px 40px rgba(16,30,34,0.6)}
+.hero-content h1{margin:0 0 8px 0;font-size:1.6rem}
+.hero-content .lead{color:var(--muted);margin:6px 0 12px 0}
+.tech-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tech-badges span{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:0.85rem;border:1px solid rgba(110,240,200,0.04)}
+
+/* Project thumbnails */
+.project-thumb-img{width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.03)}
+.project-meta{font-size:0.85rem;color:var(--muted);margin-top:8px}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:120px 1fr}
+  .hero-img{width:120px;height:120px}
+}
+@media (max-width:600px){
+  .hero-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+  .hero-photo{justify-self:center}
+  .hero-img{width:140px;height:140px}
 }

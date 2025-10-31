@@ -28,37 +28,72 @@
   </header>
 
   <main class="container">
+    <!-- Profile hero: short bio, big photo, tech badges and CTAs -->
+    <section class="profile-hero reveal">
+      <div class="hero-grid">
+        <div class="hero-photo">
+          <img src="assets/avatar.jpg" alt="James W Wachira" class="hero-img" loading="lazy" onerror="this.style.display='none'" />
+        </div>
+        <div class="hero-content">
+          <h1>Hi — I'm <span>James W Wachira</span></h1>
+          <p class="lead">I build fast, accessible web apps and trading tools. I focus on clear UX, maintainable code and measurable results.</p>
+
+          <div class="tech-badges" aria-hidden="true">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Python</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Work with me</a>
+            <a class="btn btn-ghost" href="assets/JamesWachira_CV.pdf" download>Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="projects-section reveal">
       <h1>Selected Projects</h1>
       <p class="muted">Click a card to open details and gallery images.</p>
 
-      <div class="project-grid">
+  <div class="project-grid">
         <!-- Project 1 -->
         <article class="project-card" data-index="0" tabindex="0" role="button" aria-pressed="false">
+          <img src="assets/project-0.jpg" alt="Forex Market Dashboard screenshot" class="project-thumb-img" loading="lazy" onerror="this.style.display='none'" />
           <h3>Forex Market Dashboard</h3>
           <p>Real-time price action dashboard and alerts.</p>
+          <div class="project-meta muted">React • WebSockets • Charting</div>
         </article>
 
         <!-- Project 2 -->
         <article class="project-card" data-index="1" tabindex="0" role="button" aria-pressed="false">
-          <h3>CINEMA  Website Template</h3>
+          <img src="assets/project-1.jpg" alt="Cinema template preview" class="project-thumb-img" loading="lazy" onerror="this.style.display='none'" />
+          <h3>CINEMA Website Template</h3>
           <p>Modular responsive portfolio template.</p>
+          <div class="project-meta muted">HTML • CSS • Responsive</div>
         </article>
 
         <!-- Project 3 -->
         <article class="project-card" data-index="2" tabindex="0" role="button" aria-pressed="false">
+          <img src="assets/project-2.jpg" alt="Binary Signal Bot UI" class="project-thumb-img" loading="lazy" onerror="this.style.display='none'" />
           <h3>Binary Signal Bot UI</h3>
           <p>Interface for managing automated signals.</p>
+          <div class="project-meta muted">Vue • Automation • APIs</div>
         </article>
 
         <!-- More projects -->
         <article class="project-card" data-index="3" tabindex="0" role="button" aria-pressed="false">
+          <img src="assets/project-3.jpg" alt="Trade Journal UI" class="project-thumb-img" loading="lazy" onerror="this.style.display='none'" />
           <h3>Trade Journal (MVP)</h3>
           <p>Simple trade logging application.</p>
+          <div class="project-meta muted">Python • Flask • SQLite</div>
         </article>
         <article class="project-card" data-index="4" tabindex="0" role="button" aria-pressed="false">
+          <img src="assets/project-4.jpg" alt="Data Tools" class="project-thumb-img" loading="lazy" onerror="this.style.display='none'" />
           <h3>Data Tools</h3>
           <p>Scripts and tools for data cleaning and export.</p>
+          <div class="project-meta muted">Scripts • Automation • CSV</div>
         </article>
       </div>
     </section>
