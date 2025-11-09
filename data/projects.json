@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Forex Market Dashboard",
+    "desc": "Real-time price action dashboard. Built with JS and lightweight charting.",
+    "link": "#",
+    "images": ["assets/project1.svg"],
+    "tags": ["dashboard","finance"]
+  },
+  {
+    "title": "Portfolio Website Template",
+    "desc": "Modular responsive portfolio template for freelancers.",
+    "link": "#",
+    "images": ["assets/project2.svg"],
+    "tags": ["template","web"]
+  },
+  {
+    "title": "Binary Signal Bot UI",
+    "desc": "Interface for managing automated signals and logs.",
+    "link": "#",
+    "images": ["assets/project3.svg"],
+    "tags": ["tools","automation"]
+  },
+  {
+    "title": "Trade Journal (MVP)",
+    "desc": "Minimal journal for logging trades and performance.",
+    "link": "#",
+    "images": [],
+    "tags": ["utility"]
+  },
+  {
+    "title": "Data Tools",
+    "desc": "Scripts and tools for data cleaning and export.",
+    "link": "#",
+    "images": [],
+    "tags": ["scripts","data"]
+  }
+]

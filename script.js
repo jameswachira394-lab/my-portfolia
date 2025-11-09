@@ -22,8 +22,8 @@ document.querySelectorAll('.reveal, .card, .project-card').forEach(el => {
   revealObserver.observe(el);
 });
 
-// Projects data
-const PROJECTS = [
+// Projects data (fallback). We'll attempt to fetch `data/projects.json` on load.
+let PROJECTS = [
   {
     title: 'Forex Market Dashboard',
     desc: 'Real-time price action dashboard. Built with JS and light-weight charting.',
@@ -55,6 +55,59 @@ const PROJECTS = [
     images: []
   }
 ];
+
+// Render projects into the DOM
+function renderProjects(list){
+  const grid = document.getElementById('projectGrid') || document.querySelector('.project-grid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  list.forEach((p, i) => {
+    const card = document.createElement('article');
+    card.className = 'project-card';
+    card.setAttribute('data-index', i);
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-pressed', 'false');
+
+    const thumb = document.createElement('img');
+    thumb.className = 'project-thumb-img';
+    thumb.alt = p.title + ' thumbnail';
+    thumb.src = (p.images && p.images.length) ? p.images[0] : 'assets/project-placeholder.svg';
+
+    const h = document.createElement('h3');
+    h.textContent = p.title;
+    const d = document.createElement('p');
+    d.textContent = p.desc;
+
+    // Build card
+    if(p.images && p.images.length){
+      card.appendChild(thumb);
+    }
+    card.appendChild(h);
+    card.appendChild(d);
+
+    grid.appendChild(card);
+
+    // Attach reveal observer to newly created card
+    try{ if(revealObserver) revealObserver.observe(card); } catch(e){}
+
+    // Events
+    card.addEventListener('click', ()=> openProjectModal(i));
+    card.addEventListener('keydown', e=>{ if(e.key === 'Enter') openProjectModal(i); });
+  });
+}
+
+// Try loading external data file
+fetch('data/projects.json').then(r=>{
+  if(!r.ok) throw new Error('no data');
+  return r.json();
+}).then(data=>{
+  if(Array.isArray(data) && data.length) PROJECTS = data;
+  renderProjects(PROJECTS);
+}).catch(()=>{
+  // fallback to built-in list
+  renderProjects(PROJECTS);
+});
 
 // Modal logic (portfolio)
 const modal = document.getElementById('projectModal');
